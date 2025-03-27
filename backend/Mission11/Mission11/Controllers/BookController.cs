@@ -14,10 +14,19 @@ namespace Mission11.Controllers
         public BookController(BookDbContext temp) => _bookContext = temp;
 
         [HttpGet]
-        public IActionResult Get(int pageSize = 10, int pageNum = 1, string sortOrder = "asc")
+        public IActionResult Get(int pageSize = 10, int pageNum = 1, string sortOrder = "asc", [FromQuery] List<string>? bookTypes = null)
         {
+            var query = _bookContext.Books.AsQueryable();
+
+            if (bookTypes != null && bookTypes.Any())
+            {
+                query = query.Where(b => bookTypes.Contains(b.Category));
+            }
+            
+            var totalNumBooks = query.Count();
+            
             // Get the books from the database
-            var booksQuery = _bookContext.Books.AsQueryable();
+            var booksQuery = query.AsQueryable();
 
             // Sort the books based on the sortOrder parameter
             if (sortOrder.ToLower() == "desc")
@@ -35,8 +44,8 @@ namespace Mission11.Controllers
                 .Take(pageSize)  // Take the books for the current page
                 .ToList();
 
-            // Get the total number of books for pagination info
-            var totalNumBooks = _bookContext.Books.Count();
+
+
 
             // Create the response object with books and pagination info
             var response = new
@@ -47,5 +56,17 @@ namespace Mission11.Controllers
 
             return Ok(response);
         }
+
+        [HttpGet("GetBookTypes")]
+        public IActionResult GetBookTypes()
+        {
+            var bookTypes = _bookContext.Books
+                .Select(b => b.Category)
+                .Distinct()
+                .ToList();
+            
+            return Ok(bookTypes);
+        }
+        
     }
 }

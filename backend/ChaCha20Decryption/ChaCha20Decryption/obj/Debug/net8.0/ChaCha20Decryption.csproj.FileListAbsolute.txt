@@ -1,0 +1,5 @@
+/Users/cooperburden/Desktop/Mission11/backend/ChaCha20Decryption/ChaCha20Decryption/obj/Debug/net8.0/ChaCha20Decryption.GeneratedMSBuildEditorConfig.editorconfig
+/Users/cooperburden/Desktop/Mission11/backend/ChaCha20Decryption/ChaCha20Decryption/obj/Debug/net8.0/ChaCha20Decryption.AssemblyInfoInputs.cache
+/Users/cooperburden/Desktop/Mission11/backend/ChaCha20Decryption/ChaCha20Decryption/obj/Debug/net8.0/ChaCha20Decryption.AssemblyInfo.cs
+/Users/cooperburden/Desktop/Mission11/backend/ChaCha20Decryption/ChaCha20Decryption/obj/Debug/net8.0/ChaCha20Decryption.csproj.CoreCompileInputs.cache
+/Users/cooperburden/Desktop/Mission11/backend/ChaCha20Decryption/ChaCha20Decryption/obj/Debug/net8.0/ChaCha20Decryption.sourcelink.json

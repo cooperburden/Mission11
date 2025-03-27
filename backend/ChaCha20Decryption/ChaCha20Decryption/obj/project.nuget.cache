@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "RZiCXpJ5SJo=",
+  "success": true,
+  "projectFilePath": "/Users/cooperburden/Desktop/Mission11/backend/ChaCha20Decryption/ChaCha20Decryption/ChaCha20Decryption.csproj",
+  "expectedPackageFiles": [
+    "/Users/cooperburden/.nuget/packages/libsodium/1.0.20.1/libsodium.1.0.20.1.nupkg.sha512"
+  ],
+  "logs": []
+}
