@@ -1,36 +1,28 @@
-
-
-import { useState } from 'react';
-import './App.css'
-import BookList from './BookList'
-import CategoryFilter from './CategoryFilter'
-import WelcomeBand from './WelcomeBand'
-
+import './App.css';
+import { CartProvider } from './context/CartContext';
+import CartPage from './pages/CartPage';
+import BooksPage from './pages/BooksPage'; // Assuming this is where you show books
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CartSummary from './components/CartSummary'; // Import the cart summary
+import ToastNotification from "./components/Toast"; // Import the Toast component
 
 function App() {
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-
   return (
     <>
-    <div className='container mt-4'>
-      <div className='row bg-primary text-white'>
-        <WelcomeBand />
-      </div>
-      <div className='row'>
-        <div className='col-md-3'>
-          <CategoryFilter 
-          selectedCategories={selectedCategories}
-          setSelectedCategories={setSelectedCategories} />
-        </div>
-        <div className='col-md-9'>
-          <BookList selectedCategories={selectedCategories}/>
-        </div>
-      </div>
-    </div>  
-
-      
+      {/* CartProvider wraps the entire app, so cart data is available globally */}
+      <CartProvider>
+        <Router>
+          {/* Cart Summary is available on every page */}
+          <CartSummary />
+          <ToastNotification /> {/* Display toast notification */}
+          <Routes>
+            <Route path="/" element={<BooksPage />} />
+            <Route path="/cart" element={<CartPage />} />
+          </Routes>
+        </Router>
+      </CartProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -40,3 +40,22 @@
 .read-the-docs {
   color: #888;
 }
+
+@keyframes flash {
+  0% { opacity: 1; color: #28a745; }  /* Bright green at the start */
+  50% { opacity: 0.3; color: #28a745; }  /* Bright green at halfway point */
+  100% { opacity: 1; color: #28a745; }  /* Bright green at the end */
+}
+
+.flashing {
+  animation: flash 1s ease-in-out 3;
+}
+
+
+/* App.css */
+.toast-container {
+  position: fixed;
+  top: 10px;
+  left: 10px; /* Ensure toast shows up at top-left */
+  z-index: 1050; /* To ensure it stays on top of other content */
+}
