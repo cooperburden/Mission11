@@ -4,7 +4,7 @@ import './CategoryFilter.css';
 function CategoryFilter({
     selectedCategories, 
     setSelectedCategories
-} : {
+}: {
     selectedCategories: string[];
     setSelectedCategories: (categories: string[]) => void;
 }) {
@@ -15,14 +15,13 @@ function CategoryFilter({
             try {
                 const response = await fetch('https://mission13-burden-backend-b7aubgeeh6a3h0bc.eastus-01.azurewebsites.net/Book/GetBookTypes');
                 const data = await response.json();
+
+                console.log('Fetched categories:', data); // Log the full data to check if categories are being fetched
                 
-                console.log('Fetched categories (full response):', JSON.stringify(data, null, 2));
-                if (data.books) {
-                    const categoriesList = data.books.map((book: any) => book.category);
-                    console.log('Categories list:', categoriesList);
-                    setCategories(categoriesList);
+                if (Array.isArray(data)) {
+                    setCategories(data); // Set categories directly if data is an array
                 } else {
-                    console.log('No books found in response');
+                    console.log('Unexpected response structure');
                     setCategories([]);
                 }
             } catch (error) {
@@ -46,7 +45,7 @@ function CategoryFilter({
             <h5>Project Types</h5>
             <div className="category-list">
                 {categories.map((c, index) => (
-                    <div key={c || index} className="category-item"> 
+                    <div key={c || index} className="category-item">
                         <input 
                             type='checkbox' 
                             id={c || `category-${index}`} 
