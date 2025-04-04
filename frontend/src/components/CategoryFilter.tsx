@@ -33,6 +33,15 @@ function CategoryFilter({
         ? selectedCategories.filter(x => x !== target.value) 
         :[...selectedCategories, target.value];
         setSelectedCategories(updatedCategories)
+    }
+
+
+    return(
+        <div className="category-filter">
+            <h5>Project Types</h5>
+            <div className="category-list">
+                {categories.map((c) => (
+                    <div key={c} className="category-item"> 
                         <input 
                         type='checkbox' 
                         id={c} 
