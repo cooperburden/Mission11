@@ -14,7 +14,7 @@ function CategoryFilter({
     useEffect(() => {
         const fetchCategories = async () => {
             try{
-                const response = await fetch("https://localhost:5000/Book/GetBookTypes");
+                const response = await fetch("https://mission13-burden-backend-b7aubgeeh6a3h0bc.eastus-01.azurewebsites.net/Book");
                 const data = await response.json();
                 console.log('Fetched categories:' , data)
                 setCategories(data);
@@ -33,15 +33,6 @@ function CategoryFilter({
         ? selectedCategories.filter(x => x !== target.value) 
         :[...selectedCategories, target.value];
         setSelectedCategories(updatedCategories)
-    }
-
-
-    return(
-        <div className="category-filter">
-            <h5>Project Types</h5>
-            <div className="category-list">
-                {categories.map((c) => (
-                    <div key={c} className="category-item"> 
                         <input 
                         type='checkbox' 
                         id={c} 
