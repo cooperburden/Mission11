@@ -27,7 +27,7 @@ const EditBookForm = ({
 
     return (
         <form onSubmit={handleSubmit}>
-            <h2> add New Project</h2>
+            <h2> Edit Book</h2>
             <label>Book Name:<input type="text" name="title" value={formData.title} onChange={handleChange} /></label>
             <label>Book Author:<input type="text" name="author" value={formData.author} onChange={handleChange} /></label>
             <label>Book Publisher:<input type="text" name="publisher" value={formData.publisher} onChange={handleChange} /></label>
@@ -36,7 +36,7 @@ const EditBookForm = ({
             <label>Book Category:<input type="text" name="category" value={formData.category} onChange={handleChange} /></label>
             <label>Book Page Count:<input type="number" name="pageCount" value={formData.pageCount} onChange={handleChange} /></label>
             <label>Book Price:<input type="number" name="price" value={formData.price} onChange={handleChange} /></label>
-            <button type="submit">Update Project</button>
+            <button type="submit">Update Book</button>
             <button type="button" onClick={onCancel}>Cancel</button>
         </form>
     )

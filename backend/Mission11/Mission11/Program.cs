@@ -17,9 +17,11 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactAppBlah",
         policy =>
         {
-            policy.WithOrigins("http://localhost:3000")
-                .AllowAnyMethod()
-                .AllowAnyHeader();
+            policy
+                .WithOrigins("https://jolly-water-044a22a1e.6.azurestaticapps.net", "http://localhost:3000")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+
         }));
 
 var app = builder.Build();
@@ -35,6 +37,8 @@ if (app.Environment.IsDevelopment())
 app.UseCors("AllowReactAppBlah");
 
 app.UseHttpsRedirection();
+
+
 
 app.UseAuthorization();
 

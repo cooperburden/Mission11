@@ -50,7 +50,7 @@ useEffect(() => {
 };
     
 
-    if (loading) return <p>Loading projects...</p>;
+    if (loading) return <p>Loading books...</p>;
     if (error) return <p className="text-red-500">Error: {error}</p>;
 
     return (
@@ -62,7 +62,7 @@ useEffect(() => {
                 className="btn btn-success mb-3" 
                 onClick={() => setShowForm(true)} 
                 >
-                    Add Project
+                    Add Book
                     </button>
             )}
 
