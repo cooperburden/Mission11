@@ -258,3 +258,4 @@
 /Users/cooperburden/Desktop/Mission11/backend/Mission11/Mission11/bin/Debug/net8.0/runtimes/win/lib/net7.0/System.Security.Cryptography.ProtectedData.dll
 /Users/cooperburden/Desktop/Mission11/backend/Mission11/Mission11/bin/Debug/net8.0/runtimes/win/lib/net7.0/System.Windows.Extensions.dll
 /Users/cooperburden/Desktop/Mission11/backend/Mission11/Mission11/obj/Debug/net8.0/Mission11.sourcelink.json
+/Users/cooperburden/Desktop/Mission11/backend/Mission11/Mission11/bin/Debug/net8.0/Bookstore.sqlite

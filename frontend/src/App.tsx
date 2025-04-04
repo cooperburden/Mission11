@@ -5,6 +5,7 @@ import BooksPage from './pages/BooksPage'; // Assuming this is where you show bo
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CartSummary from './components/CartSummary'; // Import the cart summary
 import ToastNotification from "./components/Toast"; // Import the Toast component
+import AdminBooksPage from './pages/AdminBooksPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<BooksPage />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/adminbooks" element={<AdminBooksPage />} />
           </Routes>
         </Router>
       </CartProvider>
