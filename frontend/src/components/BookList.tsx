@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Book } from '../types/Book'
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext"; // Import the custom hook to access cart context
 import { fetchBooks } from "../api/BooksAPI";
 import Pagination from "./Pagination";
@@ -11,7 +11,7 @@ function BookList({ selectedCategories }: {selectedCategories: string[] }) {
     const[pageSize, setPageSize] = useState<number>(10);
     const [pageNum, setPageNum] = useState<number>(1);
     const [totalPages, setTotalPages] = useState<number>(0);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState(true);
 

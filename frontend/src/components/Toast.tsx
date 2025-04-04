@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useCart } from "../context/CartContext"; // Import the Cart context
 import { Toast } from "react-bootstrap"; // Import Bootstrap Toast component
 
